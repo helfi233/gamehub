@@ -1,0 +1,303 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  /* Палитра */
+  --bg-start:      #6a11cb;
+  --bg-end:        #2575fc;
+  --glass-bg:      rgba(255, 255, 255, 0.1);
+  --glass-bg-hover:rgba(255, 255, 255, 0.15);
+  --glass-border:  rgba(255, 255, 255, 0.3);
+  --accent1:       #ffd700;
+  --accent2:       #ff8c00;
+  --accent-hover:  #ffe066;
+  --text-light:    #ffffff;
+  --text-dark:     #222222;
+  --shadow:        rgba(0, 0, 0, 0.2);
+
+  /* Типографика */
+  --font-base:     'Poppins', sans-serif;
+  --transition:    0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-base);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end)) fixed;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+nav {
+  margin: 1rem auto;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+nav li {
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    border-color var(--transition);
+}
+nav li:hover {
+  background: var(--glass-bg-hover);
+  transform: scale(1.05);
+}
+nav li.active {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: var(--text-dark);
+  border-color: var(--accent2);
+  transform: scale(1.1);
+}
+
+main {
+  flex: 1;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.game {
+  display: none;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(15px) saturate(180%);
+  box-shadow: 0 8px 32px var(--shadow);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  will-change: transform, box-shadow;
+}
+.game.active {
+  display: block;
+  animation: fadeIn 0.5s ease both;
+}
+.game:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px var(--shadow);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Общие кнопки */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent2));
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px var(--shadow);
+  outline: none;
+}
+
+/* Tic-Tac-Toe */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.cell {
+  aspect-ratio: 1;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.cell:hover,
+.cell:focus {
+  background: var(--glass-bg-hover);
+  transform: scale(1.05);
+  box-shadow: inset 0 0 10px var(--shadow);
+}
+.cell:active {
+  transform: scale(0.95);
+}
+
+/* Rock-Paper-Scissors */
+.rps-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.rps-buttons button {
+  flex: 1;
+  font-size: 2rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  color: var(--text-light);
+  backdrop-filter: blur(8px);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.rps-buttons button:hover,
+.rps-buttons button:focus {
+  background: var(--glass-bg-hover);
+  transform: scale(1.05);
+  box-shadow: inset 0 0 10px var(--shadow);
+  outline: none;
+}
+
+/* Reaction Test */
+.box {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 1rem;
+  background: var(--glass-bg);
+  border-radius: 12px;
+  border: 2px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(8px);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.box.wait {
+  background: var(--glass-bg-hover);
+}
+.box.go {
+  background: rgba(255, 215, 0, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Number Guessing */
+.guess-input {
+  width: 70%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  color: var(--text-light);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: background var(--transition);
+}
+.guess-input:focus {
+  background: var(--glass-bg-hover);
+  outline: none;
+}
+
+/* Clicker */
+.click-btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  color: var(--text-light);
+  backdrop-filter: blur(8px);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.click-btn:hover,
+.click-btn:focus {
+  background: var(--glass-bg-hover);
+  transform: scale(1.05);
+  box-shadow: inset 0 0 10px var(--shadow);
+  outline: none;
+}
+.click-count {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: var(--accent2);
+  text-align: center;
+}
+
+/* Responsive */
+@media(max-width: 480px) {
+  header h1 { font-size: 2rem; }
+  .grid { gap: 8px; }
+  .cell { font-size: 2rem; }
+  .rps-buttons button { font-size: 1.5rem; }
+  .btn, .click-btn { width: 100%; }
+}

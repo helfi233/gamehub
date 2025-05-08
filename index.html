@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MiniGames Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>🎮 MiniGames Hub</h1>
+  </header>
+  <nav>
+    <ul>
+      <li data-game="tic" class="active">Tic-Tac-Toe</li>
+      <li data-game="rps">RPS</li>
+      <li data-game="react">Reaction</li>
+      <li data-game="guess">Угадай число</li>
+      <li data-game="clicker">Кликер</li>
+      <li data-game="coin">Монетка</li>
+      <li data-game="dice">Кубик</li>
+      <li data-game="trivia">Факты</li>
+    </ul>
+  </nav>
+  <main>
+    <!-- === Tic-Tac-Toe === -->
+    <section id="tic" class="game active">
+      <h2>Tic-Tac-Toe</h2>
+      <div class="grid">
+        <div class="cell" data-i="0"></div>
+        <div class="cell" data-i="1"></div>
+        <div class="cell" data-i="2"></div>
+        <div class="cell" data-i="3"></div>
+        <div class="cell" data-i="4"></div>
+        <div class="cell" data-i="5"></div>
+        <div class="cell" data-i="6"></div>
+        <div class="cell" data-i="7"></div>
+        <div class="cell" data-i="8"></div>
+      </div>
+      <button class="btn reset-tic">Сбросить</button>
+    </section>
+
+    <!-- === Rock-Paper-Scissors === -->
+    <section id="rps" class="game">
+      <h2>Камень-Ножницы-Бумага</h2>
+      <div class="rps-buttons">
+        <button data-choice="✊">✊</button>
+        <button data-choice="✋">✋</button>
+        <button data-choice="✌️">✌️</button>
+      </div>
+      <p class="rps-result"></p>
+      <button class="btn reset-rps">Ещё раз</button>
+    </section>
+
+    <!-- === Reaction Test === -->
+    <section id="react" class="game">
+      <h2>Тест на реакцию</h2>
+      <div class="box">Нажми «Старт»</div>
+      <button class="btn start-react">Старт</button>
+      <p class="react-result"></p>
+    </section>
+
+    <!-- === Number Guessing === -->
+    <section id="guess" class="game">
+      <h2>Угадай число</h2>
+      <p>Я загадал число от 1 до 100. Угадай его!</p>
+      <input type="number" class="guess-input" min="1" max="100" placeholder="Ваше число"/>
+      <button class="btn guess-btn">Проверить</button>
+      <p class="guess-result"></p>
+      <button class="btn reset-guess">Начать заново</button>
+    </section>
+
+    <!-- === Click Counter === -->
+    <section id="clicker" class="game">
+      <h2>Кликер</h2>
+      <p>Нажми на кнопку как можно больше раз за 5 секунд!</p>
+      <button class="btn click-btn" disabled>Кликни меня</button>
+      <p class="click-count">0</p>
+      <button class="btn start-clicker">Старт</button>
+    </section>
+
+    <!-- === Coin Flip === -->
+    <section id="coin" class="game">
+      <h2>Монетка</h2>
+      <button class="btn flip-coin">Бросить монету</button>
+      <p class="coin-result"></p>
+    </section>
+
+    <!-- === Dice Roller === -->
+    <section id="dice" class="game">
+      <h2>Кубик</h2>
+      <button class="btn roll-dice">Бросить кубик</button>
+      <p class="dice-result"></p>
+    </section>
+
+    <!-- === Random Trivia === -->
+    <section id="trivia" class="game">
+      <h2>Интересные факты</h2>
+      <button class="btn next-trivia">Следующий факт</button>
+      <p class="trivia-text"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
