@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>MiniGames Hub(Emil)</title>
+  <title>MiniGames Hub</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
     <h1>🎮 MiniGames Hub</h1>
-    <h1>by Emil</h1>
+    <h1>By Emil</h1>
   </header>
   <nav>
     <ul>
@@ -21,6 +21,8 @@
       <li data-game="coin">Монетка</li>
       <li data-game="dice">Кубик</li>
       <li data-game="trivia">Факты</li>
+      <li data-game="math">Математика</li>
+      <li data-game="color">Угадай цвет</li>
     </ul>
   </nav>
   <main>
@@ -41,7 +43,7 @@
       <button class="btn reset-tic">Сбросить</button>
     </section>
 
-    <!-- === Rock-Paper-Scissors === -->
+    <!-- === RPS === -->
     <section id="rps" class="game">
       <h2>Камень-Ножницы-Бумага</h2>
       <div class="rps-buttons">
@@ -100,7 +102,27 @@
       <button class="btn next-trivia">Следующий факт</button>
       <p class="trivia-text"></p>
     </section>
+
+    <!-- === Math Challenge === -->
+    <section id="math" class="game">
+      <h2>Математическая задача</h2>
+      <p class="math-question"></p>
+      <input type="number" class="math-input" placeholder="Ответ"/>
+      <button class="btn math-btn">Проверить</button>
+      <p class="math-result"></p>
+      <button class="btn math-reset">Новая задача</button>
+    </section>
+
+    <!-- === Color Guess === -->
+    <section id="color" class="game">
+      <h2>Угадай цвет</h2>
+      <div class="color-box"></div>
+      <div class="color-options"></div>
+      <p class="color-result"></p>
+      <button class="btn new-color">Новый цвет</button>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>
 </html>
+
