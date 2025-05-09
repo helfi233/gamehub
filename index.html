@@ -9,7 +9,6 @@
 <body>
   <header>
     <h1>🎮 MiniGames Hub</h1>
-    <h1>By Emil</h1>
   </header>
   <nav>
     <ul>
@@ -26,7 +25,7 @@
     </ul>
   </nav>
   <main>
-    <!-- === Tic-Tac-Toe === -->
+    <!-- 1. Tic-Tac-Toe -->
     <section id="tic" class="game active">
       <h2>Tic-Tac-Toe</h2>
       <div class="grid">
@@ -43,7 +42,7 @@
       <button class="btn reset-tic">Сбросить</button>
     </section>
 
-    <!-- === RPS === -->
+    <!-- 2. Rock-Paper-Scissors -->
     <section id="rps" class="game">
       <h2>Камень-Ножницы-Бумага</h2>
       <div class="rps-buttons">
@@ -55,7 +54,7 @@
       <button class="btn reset-rps">Ещё раз</button>
     </section>
 
-    <!-- === Reaction Test === -->
+    <!-- 3. Reaction Test -->
     <section id="react" class="game">
       <h2>Тест на реакцию</h2>
       <div class="box">Нажми «Старт»</div>
@@ -63,7 +62,7 @@
       <p class="react-result"></p>
     </section>
 
-    <!-- === Number Guessing === -->
+    <!-- 4. Number Guessing -->
     <section id="guess" class="game">
       <h2>Угадай число</h2>
       <p>Я загадал число от 1 до 100. Угадай его!</p>
@@ -73,7 +72,7 @@
       <button class="btn reset-guess">Начать заново</button>
     </section>
 
-    <!-- === Click Counter === -->
+    <!-- 5. Click Counter -->
     <section id="clicker" class="game">
       <h2>Кликер</h2>
       <p>Нажми на кнопку как можно больше раз за 5 секунд!</p>
@@ -82,28 +81,28 @@
       <button class="btn start-clicker">Старт</button>
     </section>
 
-    <!-- === Coin Flip === -->
+    <!-- 6. Coin Flip -->
     <section id="coin" class="game">
       <h2>Монетка</h2>
       <button class="btn flip-coin">Бросить монету</button>
       <p class="coin-result"></p>
     </section>
 
-    <!-- === Dice Roller === -->
+    <!-- 7. Dice Roller -->
     <section id="dice" class="game">
       <h2>Кубик</h2>
       <button class="btn roll-dice">Бросить кубик</button>
       <p class="dice-result"></p>
     </section>
 
-    <!-- === Random Trivia === -->
+    <!-- 8. Random Trivia -->
     <section id="trivia" class="game">
       <h2>Интересные факты</h2>
       <button class="btn next-trivia">Следующий факт</button>
       <p class="trivia-text"></p>
     </section>
 
-    <!-- === Math Challenge === -->
+    <!-- 9. Math Challenge -->
     <section id="math" class="game">
       <h2>Математическая задача</h2>
       <p class="math-question"></p>
@@ -113,11 +112,11 @@
       <button class="btn math-reset">Новая задача</button>
     </section>
 
-    <!-- === Color Guess === -->
+    <!-- 10. Color Guess -->
     <section id="color" class="game">
       <h2>Угадай цвет</h2>
-      <div class="color-box"></div>
-      <div class="color-options"></div>
+      <div class="color-box" style="width:100%;height:100px;border-radius:12px;margin-bottom:1rem;"></div>
+      <div class="color-options" style="display:flex;justify-content:center;gap:0.5rem;"></div>
       <p class="color-result"></p>
       <button class="btn new-color">Новый цвет</button>
     </section>
@@ -125,4 +124,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
